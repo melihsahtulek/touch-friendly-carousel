@@ -1,0 +1,105 @@
+.bg-blue {
+  background-color: #0e3eda;
+}
+
+.bg-purple {
+  background-color: #5463ff;
+}
+
+.bg-yellow {
+  background-color: #ffc300;
+}
+
+.bg-red {
+  background-color: #ff1818;
+}
+
+.bg-black {
+  background-color: #1b1a17;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .carousel-container {
+  width: 768px;
+  height: calc(768px / 2);
+  border-radius: 5px;
+  border: 1px solid rgba(27, 26, 23, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.container .carousel-container .item {
+  min-width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .carousel-container .item > h3 {
+  color: #ffffff;
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+.container .carousel-container > button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #ffffff;
+  background-color: #1b1a17;
+  width: 75px;
+  height: calc(75px / 2);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.container .carousel-container > button.prev {
+  left: 5px;
+}
+
+.container .carousel-container > button.next {
+  right: 5px;
+}
+/*# sourceMappingURL=carousel.css.map */
