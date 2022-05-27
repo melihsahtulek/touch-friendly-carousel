@@ -27,11 +27,11 @@ $border-radius: 5px;
     border-radius: $border-radius;
     border: 1px solid rgba($color: #1b1a17, $alpha: 0.15);
     display: flex;
-    // overflow: hidden;
+    overflow: hidden;
     position: relative;
 
     .item {
-      min-width: 100%;
+      min-width: 768px;
       height: 100%;
       display: flex;
       align-items: center;

@@ -49,11 +49,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
   position: relative;
 }
 
 .container .carousel-container .item {
-  min-width: 100%;
+  min-width: 768px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
