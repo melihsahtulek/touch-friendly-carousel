@@ -45,14 +45,13 @@ window.addEventListener("load", () => {
 
   const touchStart = (evt) => {
     control = true;
-    firstTouchX = evt.x - carousel.offsetLeft;
-    firstTouchY = evt.y - carousel.offsetTop;
+    firstTouchX = (evt.x || evt.touches[0].clientX) - carousel.offsetLeft;
   };
 
   const touchMove = (evt) => {
     if (control) {
-      move((firstTouchX - (evt.x - carousel.offsetLeft)) * -1 - index * width, { delay: false });
-      moveDirection((firstTouchX - (evt.x - carousel.offsetLeft)) * -1);
+      move((firstTouchX - ((evt.x || evt.touches[0].clientX) - carousel.offsetLeft)) * -1 - index * width, { delay: false });
+      moveDirection((firstTouchX - ((evt.x || evt.touches[0].clientX) - carousel.offsetLeft)) * -1);
     }
   };
 
