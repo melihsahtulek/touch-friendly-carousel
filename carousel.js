@@ -40,9 +40,6 @@ window.addEventListener("load", () => {
     direction = width + n > width ? "prev" : "next";
   };
 
-  const nextItem = () => {};
-  const prevItem = () => {};
-
   const touchStart = (evt) => {
     control = true;
     firstTouchX = (evt.x || evt.touches[0].clientX) - carousel.offsetLeft;
@@ -87,4 +84,21 @@ window.addEventListener("load", () => {
   carousel.addEventListener("touchmove", (evt) => touchMove(evt));
   carousel.addEventListener("touchcancel", (evt) => touchCancel(evt));
   carousel.addEventListener("touchend", (evt) => touchStop(evt));
+
+  // BUTTON EVENTS
+
+  for (const button of controlButtons) {
+    button.addEventListener("click", () => {
+      direction = button.getAttribute("data-btn-rule");
+      if (direction === "next" && index + 1 < maxCount) {
+        index++;
+      }
+
+      if (direction === "prev" && index > 0) {
+        index--;
+      }
+
+      move(index * width * -1, { delay: true });
+    });
+  }
 });
