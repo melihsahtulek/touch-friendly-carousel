@@ -17,24 +17,27 @@ window.addEventListener("load", () => {
     if (obj.delay) {
       for (const elem of carousel.children) {
         if (elem.tagName.toLocaleLowerCase() === "div") {
-          maxCount++;
-          elem.style.transform = `translateX(${n}px)`;
           elem.style.transition = ".25s";
         }
       }
     } else {
       for (const elem of carousel.children) {
         if (elem.tagName.toLocaleLowerCase() === "div") {
-          maxCount++;
-          elem.style.transform = `translateX(${n}px)`;
           elem.style.transition = "none";
         }
+      }
+    }
+
+    for (const elem of carousel.children) {
+      if (elem.tagName.toLocaleLowerCase() === "div") {
+        maxCount++;
+        elem.style.transform = `translateX(${n}px)`;
       }
     }
   };
 
   const moveDirection = (n) => {
-    return width + n > width ? "prev" : "next";
+    direction = width + n > width ? "prev" : "next";
   };
 
   const nextItem = () => {};
