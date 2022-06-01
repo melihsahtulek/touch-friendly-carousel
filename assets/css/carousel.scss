@@ -1,0 +1,100 @@
+$colors: (
+  blue: #0e3eda,
+  purple: #5463ff,
+  yellow: #ffc300,
+  red: #ff1818,
+  black: #1b1a17,
+  white: #ffffff,
+);
+$border-radius: 5px;
+
+@each $name, $value in $colors {
+  .bg-#{$name} {
+    background-color: $value;
+  }
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .carousel-container {
+    width: 768px;
+    height: calc(768px / 2);
+    border-radius: $border-radius;
+    border: 1px solid rgba($color: #1b1a17, $alpha: 0.15);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    .item {
+      min-width: calc(100% + 2px);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > h3 {
+        color: map-get($colors, white);
+        font-size: 5rem;
+        font-weight: 400;
+      }
+    }
+
+    > button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: map-get($colors, white);
+      background-color: map-get($colors, black);
+      width: 75px;
+      height: calc(75px / 2);
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      cursor: pointer;
+
+      &.prev {
+        left: 5px;
+      }
+
+      &.next {
+        right: 5px;
+      }
+    }
+  }
+
+  > a {
+    margin-top: 1rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+
+    > i {
+      color: map-get($colors, red);
+      margin: 0 5px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+    .carousel-container {
+      width: 100%;
+      height: 30vmax;
+
+      > button {
+        width: 50px;
+        height: 30px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
